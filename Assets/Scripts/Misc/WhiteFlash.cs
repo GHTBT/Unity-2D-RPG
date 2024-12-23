@@ -8,20 +8,21 @@ public class WhiteFlash : MonoBehaviour
 
     private Material defaultMaterial;
     private SpriteRenderer spriteRenderer;
-    private EnemyHealth enemyHealth;
 
     private void Awake() 
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        enemyHealth = GetComponent<EnemyHealth>();
         defaultMaterial = spriteRenderer.material;       
     }
 
+    public float GetRestoreMaterialTime()
+    {
+        return restoreDefaultMaterialTime;
+    }
     public IEnumerator FlashRoutine()
     {
         spriteRenderer.material = whiteFlashMaterial;
         yield return new WaitForSeconds(restoreDefaultMaterialTime);
         spriteRenderer.material = defaultMaterial;
-        enemyHealth.DetectDeath();
     }
 }
