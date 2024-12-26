@@ -2,10 +2,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player_Controller : MonoBehaviour
+public class Player_Controller : Singleton<Player_Controller>
 {
     public bool FacingLeft {get {return facingLeft;}}
-    public static Player_Controller Instance;
+
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private TrailRenderer trailRenderer;
@@ -27,9 +27,9 @@ public class Player_Controller : MonoBehaviour
         startingMoveSpeed = moveSpeed;
     }
 
-    private void Awake() 
+    protected override void Awake() 
     {
-        Instance = this;
+        base.Awake();
         playerControls = new Player_Controls();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
