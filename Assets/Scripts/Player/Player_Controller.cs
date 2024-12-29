@@ -9,6 +9,7 @@ public class Player_Controller : Singleton<Player_Controller>
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private TrailRenderer trailRenderer;
+    [SerializeField] private Transform weaponCollider;
 
     private Player_Controls playerControls;
     private Vector2 movements;
@@ -44,6 +45,10 @@ public class Player_Controller : Singleton<Player_Controller>
     {
         Move();
         AdjustPlayerDirection();
+    }
+    public Transform GetWeaponCollider()
+    {
+        return weaponCollider;
     }
     private void OnEnable() 
     {
