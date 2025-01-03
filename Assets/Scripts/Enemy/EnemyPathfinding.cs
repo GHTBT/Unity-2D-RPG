@@ -33,9 +33,13 @@ public class EnemyPathfinding : MonoBehaviour
             spriteRenderer.flipX = false;
         }
     }
-    // Update is called once per frame
     public void MoveTo(Vector2 targetPosition)
     {
         moveDir = targetPosition;
+    }
+
+    public void StopMoving()
+    {
+        moveDir = Vector3.zero;
     }
 }

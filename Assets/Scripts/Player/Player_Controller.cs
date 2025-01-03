@@ -18,6 +18,7 @@ public class Player_Controller : Singleton<Player_Controller>
     private Animator animator;
 
     private SpriteRenderer spriteRenderer;
+    private Knockback knockback;
     private float startingMoveSpeed;
     private bool facingLeft = false;
     private bool isDashing = false;
@@ -35,6 +36,7 @@ public class Player_Controller : Singleton<Player_Controller>
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        knockback = GetComponent<Knockback>();
     }
     // Update is called once per frame
     void Update()
@@ -63,6 +65,10 @@ public class Player_Controller : Singleton<Player_Controller>
     }
     private void Move()
     {
+        if(knockback.GettingKnockedBack)
+        {
+            return;
+        }
         rb.MovePosition(rb.position + movements*(moveSpeed*Time.fixedDeltaTime));
     }
     private void AdjustPlayerDirection ()
