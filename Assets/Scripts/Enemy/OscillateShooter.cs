@@ -12,6 +12,7 @@ public class OscillateShooter : MonoBehaviour, IEnemy
     [SerializeField] [Range(0, 359)] private float angleSpread;
     [SerializeField] private float startingDistance = 0.1f;
     [SerializeField] private bool stagger;
+    [Tooltip("Stagger must be enabled for oscillate to function properly")] 
     [SerializeField] private bool oscillate;
 
     private bool isShooting = false;

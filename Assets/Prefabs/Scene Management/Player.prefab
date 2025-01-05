@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 5371326490246331565}
   - component: {fileID: 2915362755274531800}
   - component: {fileID: 6294668068899474256}
+  - component: {fileID: 4974666469507456499}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -479,7 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18724ea396e31c04aa3d1361d85afbb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 6
   knockBackThrustAmount: 3
   damageRecoveryTime: 1
 --- !u!114 &2915362755274531800
@@ -509,6 +510,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlashMaterial: {fileID: 2100000, guid: bc388ff7cb2e5b545b42deba4d59f1f3, type: 2}
   restoreDefaultMaterialTime: 0.2
+--- !u!114 &4974666469507456499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5117761674640649644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40b6e6613d14d74189db64763ead31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullStaminaImage: {fileID: 21300000, guid: 0b6d14c1aab7d6f4985a6db61ed313cc, type: 3}
+  emptyStaminaImage: {fileID: 21300000, guid: a12f95eb9fee2344fb5c239b923f362c, type: 3}
+  timeBetweenStaminaRefresh: 3
 --- !u!1 &5834428012409446158
 GameObject:
   m_ObjectHideFlags: 0

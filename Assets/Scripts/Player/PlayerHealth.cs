@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : Singleton<PlayerHealth>
 {
+    public bool isDead { get; private set; }
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float knockBackThrustAmount = 3f;
     [SerializeField] private float damageRecoveryTime = 1f;
@@ -13,6 +15,9 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private bool canTakeDamage = true;
     private Knockback knockback;
     private WhiteFlash flash;
+    const string HEALTH_SLIDER_TEXT = "Health Slider";
+    const string TOWN_TEXT = "Scene_1";
+    readonly int DEATH_HASH = Animator.StringToHash("Death");
 
     protected override void Awake()
     {
@@ -23,6 +28,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     private void Start() 
     {
+        isDead = false;
         currentHealth = maxHealth;
         UpdateHealthSlider();
     }
@@ -66,11 +72,22 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     private void CheckIfPlayerDeath()
     {
-        if(currentHealth <= 0)
+        if(currentHealth <= 0 && !isDead)
         {
+            isDead = true;
+            Destroy(ActiveWeapon.Instance.gameObject);
             currentHealth = 0;
+            GetComponent<Animator>().SetTrigger(DEATH_HASH);
+            StartCoroutine(DeathLoadSceneRoutine());
             Debug.Log("Dead");
         }
+    }
+
+    private IEnumerator DeathLoadSceneRoutine()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+        SceneManager.LoadScene(TOWN_TEXT);
     }
 
     private IEnumerator DamageRecoveryRoutine()
@@ -83,7 +100,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     {
         if(healthSlider == null)
         {
-            healthSlider = GameObject.Find("Health Slider").GetComponent<Slider>();
+            healthSlider = GameObject.Find(HEALTH_SLIDER_TEXT).GetComponent<Slider>();
         }
 
         healthSlider.maxValue = maxHealth;

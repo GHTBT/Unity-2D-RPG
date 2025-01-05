@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: fa471a4f1d8335640a946e510ebeb735
+guid: 9b880f5af5b89ba49a26593ff12a4177
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3341093529323198379
-    second: spr_player_right_hit_0
+      213: 1646847669312375486
+    second: Shadows_Sheet_0
   - first:
-      213: -6375839425098158413
-    second: spr_player_right_hit_1
+      213: 9094891780467437497
+    second: Shadows_Sheet_1
   - first:
-      213: -7931111939729201523
-    second: spr_player_right_hit_2
-  - first:
-      213: 5922747424731439311
-    second: spr_player_right_hit_3
+      213: -4596925356590474502
+    second: Shadows_Sheet_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,89 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_player_right_hit_0
+      name: Shadows_Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ba75aa0fcd2fd5e20800000000000000
-      internalID: 3341093529323198379
+      spriteID: eba4b88da37cad610800000000000000
+      internalID: 1646847669312375486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_player_right_hit_1
+      name: Shadows_Sheet_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 16
         y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3bee712d2d77487a0800000000000000
-      internalID: -6375839425098158413
+      spriteID: 9bfa16533eb873e70800000000000000
+      internalID: 9094891780467437497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_player_right_hit_2
+      name: Shadows_Sheet_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 32
         y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d86e49e26b70fe190800000000000000
-      internalID: -7931111939729201523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_player_right_hit_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc02a791763d13250800000000000000
-      internalID: 5922747424731439311
+      spriteID: afa50756eb07430c0800000000000000
+      internalID: -4596925356590474502
       vertices: []
       indices: 
       edges: []
@@ -200,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 91155204b7e4619438a01d954828c5c4
+    spriteID: 8af7f07e65f2210448a39dd90a9e136c
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spr_player_right_hit_0: 3341093529323198379
-      spr_player_right_hit_1: -6375839425098158413
-      spr_player_right_hit_2: -7931111939729201523
-      spr_player_right_hit_3: 5922747424731439311
+      Shadows_Sheet_0: 1646847669312375486
+      Shadows_Sheet_1: 9094891780467437497
+      Shadows_Sheet_2: -4596925356590474502
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
