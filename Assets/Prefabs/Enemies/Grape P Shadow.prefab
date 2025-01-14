@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8138043972227950961}
   m_Layer: 0
   m_Name: Grape P Shadow
-  m_TagString: Untagged
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

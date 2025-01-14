@@ -4,18 +4,18 @@ public class PickupSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject goldCoin, healthOrb, staminaOrb;
 
-    public void DropItems()
+    public void DropItems(int goldAmount)
     {
-        int randomNum = Random.Range(1,4);
-        if(randomNum == 1)
+        for(int i = 0; i < goldAmount; i++)
         {
             Instantiate(goldCoin, transform.position, Quaternion.identity);
         }
-        if(randomNum == 2)
+        int randomNum = Random.Range(1,4);
+        if(randomNum == 1)
         {
             Instantiate(healthOrb, transform.position, Quaternion.identity);
         }
-        if(randomNum == 3)
+        if(randomNum == 2)
         {
             Instantiate(staminaOrb, transform.position, Quaternion.identity);
         }

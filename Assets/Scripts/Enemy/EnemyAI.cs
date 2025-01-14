@@ -8,18 +8,22 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private MonoBehaviour enemyType;
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private bool stopMovingWhileAttacking = false;
+	[SerializeField] public float FollowDist = 6f;
+    [SerializeField] private float followSpeed = 3f;
 
     private bool canAttack = true;
     private enum State 
     {
         Roaming,
-        Attacking
+        Attacking,
+        Follow
     }
 
     private Vector2 roamPosition;
     private float timeRoaming = 0f;
     private State state;
     private EnemyPathfinding enemyPathfinding;
+    
 
     private void Awake()
     {
@@ -49,6 +53,10 @@ public class EnemyAI : MonoBehaviour
             case State.Attacking:
                 Attacking();
             break;
+
+            case State.Follow:
+                Following();
+            break;
         }
     }
 
@@ -56,6 +64,10 @@ public class EnemyAI : MonoBehaviour
     {
         timeRoaming += Time.deltaTime;
         enemyPathfinding.MoveTo(roamPosition);
+        if(Vector2.Distance(transform.position, Player_Controller.Instance.transform.position) < FollowDist)
+        {
+            state = State.Follow;
+        }
         if(Vector2.Distance(transform.position, Player_Controller.Instance.transform.position) < attackRange)
         {
             state = State.Attacking;
@@ -72,7 +84,10 @@ public class EnemyAI : MonoBehaviour
         {
             state = State.Roaming;
         }
-
+        if(Vector2.Distance(transform.position, Player_Controller.Instance.transform.position) < FollowDist)
+        {
+            state = State.Follow;
+        }
         if(attackRange != 0 && canAttack)
         {
             canAttack = false;
@@ -88,6 +103,18 @@ public class EnemyAI : MonoBehaviour
             }
 
             StartCoroutine(AttackCooldownRoutine());
+        }
+    }
+
+    private void Following()
+    {
+        if(Vector2.Distance(transform.position, Player_Controller.Instance.transform.position) > FollowDist)
+        {
+            state = State.Roaming;
+        }
+        if(Vector2.Distance(transform.position, Player_Controller.Instance.transform.position) < FollowDist)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position,Player_Controller.Instance.transform.position, followSpeed*Time.deltaTime);
         }
     }
 

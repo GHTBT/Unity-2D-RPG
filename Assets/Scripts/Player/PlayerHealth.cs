@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,6 +19,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     const string HEALTH_SLIDER_TEXT = "Health Slider";
     const string TOWN_TEXT = "Scene_1";
     readonly int DEATH_HASH = Animator.StringToHash("Death");
+    public static Action OnPlayerDeath;
 
     protected override void Awake()
     {
@@ -87,7 +89,8 @@ public class PlayerHealth : Singleton<PlayerHealth>
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
-        SceneManager.LoadScene(TOWN_TEXT);
+        OnPlayerDeath?.Invoke();
+        //SceneManager.LoadScene(TOWN_TEXT);
     }
 
     private IEnumerator DamageRecoveryRoutine()
