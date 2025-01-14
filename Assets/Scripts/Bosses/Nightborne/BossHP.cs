@@ -29,7 +29,7 @@ public class BossHP : MonoBehaviour
         knockback.GetKnockedBack(Player_Controller.Instance.transform, knockBackThrust);
         StartCoroutine(flash.FlashRoutine());
         StartCoroutine(CheckDetectDeathRoutine());
-        if (currentHealth <= 50)
+        if (currentHealth <= 80)
 		{
 			animator.SetBool("isEnraged", true);
 		}
