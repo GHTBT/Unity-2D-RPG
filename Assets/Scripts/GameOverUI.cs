@@ -21,7 +21,7 @@ public class GameOverUI : MonoBehaviour
     private void OnDestroy() 
     {
         PlayerHealth.OnPlayerDeath -= ActivateGameObject;
-        characterUI.SetActive(false);
+        //characterUI.SetActive(false);
     }
 
     public void ReturnToMenu()

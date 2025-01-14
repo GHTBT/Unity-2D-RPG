@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4456355457632509055}
   - component: {fileID: 9147130261843521832}
   m_Layer: 0
-  m_Name: Portal VFX
+  m_Name: Portal_V VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
